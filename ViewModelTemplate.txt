@@ -1,0 +1,15 @@
+export = {0}ViewModel;
+
+import Constants = require("App/Metadata/Constants");
+import {0}Constants = require("App/{0}/{0}Constants");
+import ViewModel = require("App/ViewModels/ViewModel");
+import RegisterableFactory = require("App/Common/RegisterableFactory");
+
+class {0}ViewModel extends ViewModel {
+
+    constructor() {
+        super();
+        this.Initialize();
+    }
+
+}

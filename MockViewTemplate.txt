@@ -1,0 +1,11 @@
+export = {0}ViewMock;
+
+import ViewMock = require("Mocks/Views/ViewMock")
+
+class {0}ViewMock extends ViewMock implements application.I{0}View {
+
+    constructor() {
+        super();
+    
+    }
+}

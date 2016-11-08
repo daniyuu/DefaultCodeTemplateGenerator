@@ -1,0 +1,20 @@
+export  = {0}Bootstrap;
+
+import Bootstrap = require("App/Common/Bootstrap");
+import {0}BootstrapConstants = require("App/{0}/{0}BootstrapConstants");
+import {0}View = require("App/{0}/{0}View");
+import {0}ViewModel = require("App/{0}/{0}ViewModel");
+
+class {0}Bootstrap extends Bootstrap {
+    constructor() {
+        super();
+    }
+
+    public SetConstructorMapping(): void {
+        this.constructorMapping[{0}BootstrapConstants.{0}View] = this.typeConstructorCasting.Cast({0}View);
+        this.constructorMapping[{0}BootstrapConstants.{0}ViewModel] = this.typeConstructorCasting.Cast({0}ViewModel);
+    }
+
+    public SetSingletonConstructorMapping(): void {
+    }
+}

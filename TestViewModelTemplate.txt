@@ -1,0 +1,41 @@
+import CommonBootstrapConstants = require("Common/SPA/CommonBootstrapConstants");
+import LocalizationServiceMock = require("Mocks/Services/LocalizationServiceMock");
+import CommonTestSetup = require("Mocks/Global/CommonTestSetup");
+
+import {0}ViewModel = require("App/{0}/{0}ViewModel");
+
+suite("{0}ViewModel", () => {
+    var localizationServiceMock: LocalizationServiceMock;
+    var commonTestSetup: CommonTestSetup;
+  
+    var {1}ViewModel: {0}ViewModel;
+
+    var data: Model.I{0}RequestData;
+
+    setup(() => {
+        localizationServiceMock = new LocalizationServiceMock();
+      
+        commonTestSetup = new CommonTestSetup();
+
+        commonTestSetup
+            .Setup()
+            .WithJQueryMock()
+            .WithViewBaseMock()
+            .WithDestroyableMock();
+
+        commonTestSetup
+            .WithRegistrableFactoryDependency(CommonBootstrapConstants.LocalizationServiceFactory, localizationServiceMock);
+
+
+        {1}ViewModel = new {0}ViewModel();
+    });
+
+    teardown(() => {
+        commonTestSetup.Teardown();
+    });
+
+    test("Default Constructor - All Dependencies Resolved", () => {
+        expect(() => new {0}ViewModel()).not.to.throw();
+    });
+
+});

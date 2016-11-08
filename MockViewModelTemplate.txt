@@ -1,0 +1,10 @@
+export = {0}ViewModelMock;
+
+import TestTaskBuilder = require("TestFramework/TestTaskBuilder");
+
+class {0}ViewModelMock implements application.I{0}ViewModel {
+
+    constructor() {
+      
+    }
+}

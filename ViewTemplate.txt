@@ -1,0 +1,32 @@
+export = {0}View;
+
+import View = require("App/Views/View");
+import {0}ViewModel = require("App/{0}/{0}ViewModel");
+import {0}Constants = require("App/{0}/{0}Constants");
+import {0}BootstrapConstants = require("App/{0}/{0}BootstrapConstants");
+
+class {0}View extends View<{0}ViewModel> implements application.I{0}View {
+
+    constructor() {
+        super({0}View.GetViewOptions());
+    }
+
+    public Initialize($container: JQuery): application.IView {
+        super.Initialize($container, data);
+        return this;
+    }
+
+    public InitializeWithoutData($container: JQuery): application.I{0}View {
+        super.Initialize($container);
+        return this;
+    }
+
+    static GetViewOptions(): Model.ViewOptions {
+        return <Model.ViewOptions>{
+            TemplateName: {0}Constants.{0}Template,
+            TemplatePath: {0}Constants.{0}TemplatePath,
+            ViewModelName: {0}BootstrapConstants.{0}ViewModel
+        }
+    }
+
+}

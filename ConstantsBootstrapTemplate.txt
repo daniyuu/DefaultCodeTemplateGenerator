@@ -1,0 +1,6 @@
+export = {0}BootstrapConstants;
+
+class {0}BootstrapConstants {
+    public static {0}View = "{0}View";
+    public static {0}ViewModel = "{0}ViewModel";
+}

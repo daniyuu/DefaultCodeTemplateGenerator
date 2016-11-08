@@ -1,0 +1,43 @@
+import RegisterableFactoryTestSetup = require("Mocks/Common/RegisterableFactoryTestSetup");
+import CastingMock = require("Mocks/Common/CastingMock");
+import Constants = require("App/Metadata/Constants");
+
+import {0}BootstrapConstants = require("App/{0}/{0}BootstrapConstants");
+import {0}View = require("App/{0}/{0}View");
+import {0}ViewModel = require("App/{0}/{0}ViewModel");
+
+
+import {0}Bootstrap = require("App/{0}/{0}Bootstrap");
+
+suite("{0}Bootstrap", ()=>{
+    var registerableFactoryTestSetup: RegisterableFactoryTestSetup;
+    var bootstrap: application.IBootstrap;
+    var castingMock: CastingMock<any, application.TypeConstructor<any>>;
+
+    var castReturnValue: string = "Casted Value";
+
+    setup(() => {
+
+        castingMock = new CastingMock<any, application.TypeConstructor<any>>();
+        castingMock.CastStub.returns(castReturnValue);
+
+        registerableFactoryTestSetup = new RegisterableFactoryTestSetup();
+        registerableFactoryTestSetup.CreateStub.withArgs(Constants.TypeConstructorCasting).returns(castingMock);
+
+        bootstrap = new {0}Bootstrap();
+    });
+
+    teardown(() => {
+        registerableFactoryTestSetup.Teardown();
+        bootstrap = null;
+    });
+
+    test("{0}Bootstrap calls Cast on TypeConstructorCasting during construction", () => {
+        expect(castingMock.CastStub.callCount).to.be.equals(2);
+
+        expect(castingMock.CastStub.withArgs({0}View)).to.be.calledOnce();
+        expect(castingMock.CastStub.withArgs({0}ViewModel)).to.be.calledOnce();
+
+    });
+
+});

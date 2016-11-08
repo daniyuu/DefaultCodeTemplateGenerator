@@ -1,0 +1,44 @@
+import BindingEngineMock = require("Mocks/BindingEngineMock");
+import {0}Constants = require("App/{0}/{0}Constants");
+import {0}BootstrapConstants = require("App/{0}/{0}BootstrapConstants");
+import CommonTestSetup = require("Mocks/Global/CommonTestSetup");
+import {0}ViewModelMock = require("Mocks/{0}/{0}ViewModelMock");
+
+import {0}View = require("App/{0}/{0}View");
+
+suite("{0}", () => {
+    var commonTestSetup: CommonTestSetup;
+    var {1}ViewModelMock: {0}ViewModelMock;
+
+
+    var {1}View: {0}View;
+
+    setup(() => {
+
+        {1}ViewModelMock = new {0}ViewModelMock();
+
+        commonTestSetup = new CommonTestSetup();
+
+        commonTestSetup
+            .Setup()
+            .WithJQueryMock()
+            .WithViewBaseMock()
+            .WithDestroyableMock();
+
+        commonTestSetup
+            .WithRegistrableFactoryDependency({0}BootstrapConstants.{0}ViewModel, {1}ViewModelMock);
+
+
+        {1}View = new {0}View();
+
+    });
+
+    teardown(() => {
+        commonTestSetup.Teardown();
+    });
+
+    test("Default Constructor - All Dependencies Resolved", () => {
+        expect(() => new {0}View()).not.to.throw();
+    });
+
+});
