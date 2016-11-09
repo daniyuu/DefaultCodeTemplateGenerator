@@ -128,7 +128,7 @@ class Generator:
     def generateViewAndViewModelTemplates(self):
         print("generateViewAndViewModelTemplates")
 
-
-if __name__ == '__main__':
-    generator = Generator(Constants.TypeBuilder, "Cyy")
-    generator.execute()
+#
+# if __name__ == '__main__':
+#     generator = Generator(Constants.TypeBuilder, "Cyy")
+#     generator.execute()
