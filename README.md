@@ -2,7 +2,7 @@
 
 ## Setup
 * Install Python 2.7.*
-* Clone Code to local computer
+* Get Code, you can clone from github
 
 ## Instructions
 * Open CommandLine
