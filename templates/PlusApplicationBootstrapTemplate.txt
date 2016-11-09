@@ -1,0 +1,2 @@
+import {0}Bootstrap = require("App/{0}/{0}Bootstrap");
+this.singletonConstructorMapping[ApplicationBootstrapConstants.{0}Bootstrap] = this.typeConstructorCasting.Cast({0}Bootstrap);

@@ -6,16 +6,16 @@ import {0}ViewModelMock = require("Mocks/{0}/{0}ViewModelMock");
 
 import {0}View = require("App/{0}/{0}View");
 
-suite("{0}", () => {
+suite("{0}", () => {1}
     var commonTestSetup: CommonTestSetup;
-    var {1}ViewModelMock: {0}ViewModelMock;
+    var {3}ViewModelMock: {0}ViewModelMock;
 
 
-    var {1}View: {0}View;
+    var {3}View: {0}View;
 
-    setup(() => {
+    setup(() => {1}
 
-        {1}ViewModelMock = new {0}ViewModelMock();
+        {3}ViewModelMock = new {0}ViewModelMock();
 
         commonTestSetup = new CommonTestSetup();
 
@@ -26,19 +26,19 @@ suite("{0}", () => {
             .WithDestroyableMock();
 
         commonTestSetup
-            .WithRegistrableFactoryDependency({0}BootstrapConstants.{0}ViewModel, {1}ViewModelMock);
+            .WithRegistrableFactoryDependency({0}BootstrapConstants.{0}ViewModel, {3}ViewModelMock);
 
 
-        {1}View = new {0}View();
+        {3}View = new {0}View();
 
-    });
+    {2});
 
-    teardown(() => {
+    teardown(() => {1}
         commonTestSetup.Teardown();
-    });
+    {2});
 
-    test("Default Constructor - All Dependencies Resolved", () => {
+    test("Default Constructor - All Dependencies Resolved", () => {1}
         expect(() => new {0}View()).not.to.throw();
-    });
+    {2});
 
-});
+{2});

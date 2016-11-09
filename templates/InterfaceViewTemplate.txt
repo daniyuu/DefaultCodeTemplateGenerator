@@ -1,0 +1,6 @@
+declare module application {1}
+
+    export interface I{0}View extends application.IView {1}
+   
+    {2}
+{2}

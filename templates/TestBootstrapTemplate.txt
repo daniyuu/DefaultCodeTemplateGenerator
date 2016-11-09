@@ -9,14 +9,14 @@ import {0}ViewModel = require("App/{0}/{0}ViewModel");
 
 import {0}Bootstrap = require("App/{0}/{0}Bootstrap");
 
-suite("{0}Bootstrap", ()=>{
+suite("{0}Bootstrap", ()=>{1}
     var registerableFactoryTestSetup: RegisterableFactoryTestSetup;
     var bootstrap: application.IBootstrap;
     var castingMock: CastingMock<any, application.TypeConstructor<any>>;
 
     var castReturnValue: string = "Casted Value";
 
-    setup(() => {
+    setup(() => {1}
 
         castingMock = new CastingMock<any, application.TypeConstructor<any>>();
         castingMock.CastStub.returns(castReturnValue);
@@ -25,19 +25,19 @@ suite("{0}Bootstrap", ()=>{
         registerableFactoryTestSetup.CreateStub.withArgs(Constants.TypeConstructorCasting).returns(castingMock);
 
         bootstrap = new {0}Bootstrap();
-    });
+    {2});
 
-    teardown(() => {
+    teardown(() => {1}
         registerableFactoryTestSetup.Teardown();
         bootstrap = null;
-    });
+    {2});
 
-    test("{0}Bootstrap calls Cast on TypeConstructorCasting during construction", () => {
+    test("{0}Bootstrap calls Cast on TypeConstructorCasting during construction", () => {1}
         expect(castingMock.CastStub.callCount).to.be.equals(2);
 
         expect(castingMock.CastStub.withArgs({0}View)).to.be.calledOnce();
         expect(castingMock.CastStub.withArgs({0}ViewModel)).to.be.calledOnce();
 
-    });
+    {2});
 
-});
+{2});

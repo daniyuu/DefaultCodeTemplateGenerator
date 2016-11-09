@@ -5,11 +5,11 @@ import {0}Constants = require("App/{0}/{0}Constants");
 import ViewModel = require("App/ViewModels/ViewModel");
 import RegisterableFactory = require("App/Common/RegisterableFactory");
 
-class {0}ViewModel extends ViewModel {
+class {0}ViewModel extends ViewModel {1}
 
-    constructor() {
+    constructor() {1}
         super();
         this.Initialize();
-    }
+    {2}
 
-}
+{2}

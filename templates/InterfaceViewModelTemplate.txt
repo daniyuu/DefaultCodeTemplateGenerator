@@ -1,0 +1,5 @@
+declare module application {1}
+    export interface I{0}ViewModel {1}
+        
+    {2}
+{2}

@@ -1,5 +1,0 @@
-declare module application {
-    export interface I{0} {
-       
-    }
-}

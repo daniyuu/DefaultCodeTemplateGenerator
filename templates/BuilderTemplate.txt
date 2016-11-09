@@ -1,0 +1,18 @@
+export = {0}Builder;
+
+import Destroyable = require("Common/Destroy/Destroyable");
+import {0}BuilderConstants = require("App/{0}/{0}BuilderConstants");
+
+class {0}Builder extends Destroyable implements application.IBuilder<string> {1}
+
+    constructor() {1}
+        super();
+
+    {2}
+
+    public Build(buildOptions: Model.I{0}Options): string {1}
+
+        return "";
+    {2}
+	
+{2}

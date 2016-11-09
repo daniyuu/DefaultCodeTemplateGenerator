@@ -1,0 +1,3 @@
+"Tests/{0}/{0}View-Test",
+"Tests/{0}/{0}ViewModel-Test",
+"Tests/{0}/{0}Bootstrap-Test",

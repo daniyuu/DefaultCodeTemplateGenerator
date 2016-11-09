@@ -1,0 +1,6 @@
+export = {0}Constants;
+
+class {0}Constants {1}
+    public static
+
+{2}

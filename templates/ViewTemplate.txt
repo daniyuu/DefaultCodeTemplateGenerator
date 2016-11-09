@@ -5,28 +5,28 @@ import {0}ViewModel = require("App/{0}/{0}ViewModel");
 import {0}Constants = require("App/{0}/{0}Constants");
 import {0}BootstrapConstants = require("App/{0}/{0}BootstrapConstants");
 
-class {0}View extends View<{0}ViewModel> implements application.I{0}View {
+class {0}View extends View<{0}ViewModel> implements application.I{0}View {1}
 
-    constructor() {
+    constructor() {1}
         super({0}View.GetViewOptions());
-    }
+    {2}
 
-    public Initialize($container: JQuery): application.IView {
+    public Initialize($container: JQuery): application.IView {1}
         super.Initialize($container, data);
         return this;
-    }
+    {2}
 
-    public InitializeWithoutData($container: JQuery): application.I{0}View {
+    public InitializeWithoutData($container: JQuery): application.I{0}View {1}
         super.Initialize($container);
         return this;
-    }
+    {2}
 
-    static GetViewOptions(): Model.ViewOptions {
-        return <Model.ViewOptions>{
+    static GetViewOptions(): Model.ViewOptions {1}
+        return <Model.ViewOptions>{1}
             TemplateName: {0}Constants.{0}Template,
             TemplatePath: {0}Constants.{0}TemplatePath,
             ViewModelName: {0}BootstrapConstants.{0}ViewModel
-        }
-    }
+        {2}
+    {2}
 
-}
+{2}
