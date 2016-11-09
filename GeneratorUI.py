@@ -23,7 +23,7 @@ def generateBuilder():
 
 
 def openExplore():
-    subprocess.Popen(r'explorer /select,"./"')
+    subprocess.Popen(r'explorer /select,"{0}"'.format(os.path.dirname(os.path.abspath("__file__"))))
 
 
 root = Tkinter.Tk()
@@ -38,3 +38,5 @@ buttonBuilder = Tkinter.Button(root, text="Builder", command=generateBuilder).pa
 buttonOpenExplore = Tkinter.Button(root, text="Open Folder", command=openExplore).pack()
 
 root.mainloop()
+
+# print os.path.dirname(os.path.abspath("__file__"))
