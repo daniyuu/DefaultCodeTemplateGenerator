@@ -14,8 +14,7 @@ class Generator:
         if self.type == Constants.TypeFeatureAll:
             self.generateAll()
         if self.type == Constants.TypeApplicationInterface:
-            self.generate(Constants.TypeInterface, Constants.TemplateApplicationInterface, Constants.SuffixTS,
-                          Constants.EMPTYSTRING)
+            self.generate(Constants.TypeInterface, Constants.TemplateApplicationInterface, Constants.SuffixTS)
         if self.type == Constants.TypeBuilder:
             self.generateBuilder()
 
@@ -23,68 +22,61 @@ class Generator:
         print('Generator all files about {0}'.format(self.name))
         # class part
         # constants
-        self.generate(Constants.TypeConstants, Constants.TemplatePathConstant, Constants.SuffixTS,
-                      Constants.EMPTYSTRING)
+        self.generate(Constants.TypeConstants, Constants.TemplatePathConstant, Constants.SuffixTS)
         # bootstrap
-        self.generate(Constants.TypeBootstrap, Constants.TemplatePathBootstrap, Constants.SuffixTS,
-                      Constants.EMPTYSTRING)
+        self.generate(Constants.TypeBootstrap, Constants.TemplatePathBootstrap, Constants.SuffixTS)
         # view
-        self.generate(Constants.TypeView, Constants.TemplatePathView, Constants.SuffixTS,
-                      Constants.EMPTYSTRING)
+        self.generate(Constants.TypeView, Constants.TemplatePathView, Constants.SuffixTS)
         # viewModel
-        self.generate(Constants.TypeViewModel, Constants.TemplatePathViewModel, Constants.SuffixTS,
-                      Constants.EMPTYSTRING)
+        self.generate(Constants.TypeViewModel, Constants.TemplatePathViewModel, Constants.SuffixTS)
         # template
-        self.generate(Constants.TypeTemplate, Constants.TemplatePathTemplate, Constants.SuffixHTM,
-                      Constants.EMPTYSTRING)
+        self.generate(Constants.TypeTemplate, Constants.TemplatePathTemplate, Constants.SuffixHTM)
         # bootstrapConstants
-        self.generate(Constants.TypeBootstrapConstants, Constants.TemplatePathBootstrapConstants, Constants.SuffixTS,
-                      Constants.EMPTYSTRING)
+        self.generate(Constants.TypeBootstrapConstants, Constants.TemplatePathBootstrapConstants, Constants.SuffixTS)
 
         # mock part
         # view Mock
-        self.generate(Constants.TypeViewMock, Constants.TemplatePathViewMock, Constants.SuffixTS,
-                      Constants.EMPTYSTRING)
+        self.generate(Constants.TypeViewMock, Constants.TemplatePathViewMock, Constants.SuffixTS)
         # viewModel Mock
-        self.generate(Constants.TypeViewModelMock, Constants.TemplatePathViewModelMock, Constants.SuffixTS,
-                      Constants.EMPTYSTRING)
+        self.generate(Constants.TypeViewModelMock, Constants.TemplatePathViewModelMock, Constants.SuffixTS)
 
         # interface part
         # view interface
-        self.generate(Constants.TypeViewInterface, Constants.TemplatePathViewInterface, Constants.SuffixDTS,
-                      Constants.EMPTYSTRING)
+        self.generate(Constants.TypeViewInterface, Constants.TemplatePathViewInterface, Constants.SuffixDTS)
         # viewModel interface
-        self.generate(Constants.TypeViewModelInterface, Constants.TemplatePathViewModelInterface, Constants.SuffixDTS,
-                      Constants.EMPTYSTRING)
+        self.generate(Constants.TypeViewModelInterface, Constants.TemplatePathViewModelInterface, Constants.SuffixDTS)
 
         # test part
         # view test
-        self.generate(Constants.TypeViewTest, Constants.TemplatePathViewTest, Constants.SuffixTS,
-                      Constants.EMPTYSTRING)
+        self.generate(Constants.TypeViewTest, Constants.TemplatePathViewTest, Constants.SuffixTS)
         # view Model test
-        self.generate(Constants.TypeViewModelTest, Constants.TemplatePathViewModelTest, Constants.SuffixTS,
-                      Constants.EMPTYSTRING)
+        self.generate(Constants.TypeViewModelTest, Constants.TemplatePathViewModelTest, Constants.SuffixTS)
         # bootstrap test
-        self.generate(Constants.TypeBootstrapTest, Constants.TemplatePathBootstrapTest, Constants.SuffixTS,
-                      Constants.EMPTYSTRING)
+        self.generate(Constants.TypeBootstrapTest, Constants.TemplatePathBootstrapTest, Constants.SuffixTS)
 
         # plus
         # application bootstrap
         self.generate(Constants.TypePlusApplicationBootstrap, Constants.TemplatePathApplicationBootstrapPlus,
-                      Constants.SuffixTS,
-                      Constants.EMPTYSTRING)
-        self.generate(Constants.TypePlusTestHtmlMain, Constants.TemplatePathTestHtmlMainPlus, Constants.SuffixJS,
-                      Constants.EMPTYSTRING)
+                      Constants.SuffixTS)
+        self.generate(Constants.TypePlusTestHtmlMain, Constants.TemplatePathTestHtmlMainPlus, Constants.SuffixJS)
 
     def generateBuilder(self):
         # class part
         # class
-        self.generate(Constants.TypeBuilder, Constants.TemplatePathBuilder, Constants.SuffixTS,
-                      Constants.EMPTYSTRING)
+        self.generate(Constants.TypeBuilder, Constants.TemplatePathBuilder, Constants.SuffixTS)
         # constants
-        self.generate(Constants.TypeConstants, Constants.TemplatePathBuilder, Constants.SuffixTS, Constants.Builder)
+        self.generate(Constants.TypeBuilderConstants, Constants.TemplatePathBuilderConstants, Constants.SuffixTS)
 
-    def generate(self, type, templatePath, suffix, customString):
+        # Mork part
+        self.generate(Constants.TypeBuilderMock, Constants.TemplatePathBuilderMock, Constants.SuffixTS)
+
+        # Test part
+
+
+        # interface part
+
+
+    def generate(self, type, templatePath, suffix):
         fh = open(templatePath)
         template = fh.read()
         fh.close()
@@ -116,7 +108,7 @@ class Generator:
                                  self.name[0].lower() + self.name[1:]))
         fo.close()
 
-        print ("[Finish] {0} of {1}".format(type + customString, self.name))
+        print ("[Finish] {0} of {1}".format(type, self.name))
 
     def generateViewTemplate(self):
         fh = open('TestTemplate.txt')

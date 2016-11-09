@@ -1,0 +1,13 @@
+export = {0}BuilderMock;
+
+import TestTaskBuilder = require("TestFramework/TestTaskBuilder");
+
+class {0}BuilderMock implements application.IBuilder<string> {1}
+    public BuildStub: SinonStub = sinon.stub();
+    public Build: (buildOptions: Model.I{0}Options) => string;
+
+    constructor() {1}
+        this.Build = this.BuildStub;
+
+    {2}
+{2}

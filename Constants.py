@@ -12,7 +12,7 @@ Builder = "Builder"
 TypeFeatureAll = "TypeFeatureAll"
 TypeApplicationInterface = "TypeApplicationInterface"
 
-TypeBuilder = "Builder"
+
 TypeInterface = "Interface"
 TypeConstants = "Constants"
 TypeBootstrap = "Bootstrap"
@@ -27,6 +27,11 @@ TypeViewModelInterface = "ViewModelInterface"
 TypeViewTest = "View-TEST"
 TypeViewModelTest = "ViewModel-TEST"
 TypeBootstrapTest = "Bootstrap-TEST"
+
+TypeBuilder = "Builder"
+TypeBuilderConstants = "BuilderConstants"
+TypeBuilderMock = "BuilderMock"
+
 TypePlusTestHtmlMain = "PlusTestHtmlMain"
 TypePlusApplicationBootstrap = "PlusApplicationBootstrap"
 
@@ -47,6 +52,8 @@ TemplatePathBootstrapTest = "./templates/TestBootstrapTemplate.txt"
 TemplatePathApplicationBootstrapPlus = './templates/PlusApplicationBootstrapTemplate.txt'
 TemplatePathTestHtmlMainPlus = "./templates/PlusTestHtmlMainTemplate.txt"
 TemplatePathBuilder = "./templates/BuilderTemplate.txt"
+TemplatePathBuilderConstants = './templates/ConstantsBuilderTemplate.txt'
+TemplatePathBuilderMock = "./templates/MockBuilderTemplate.txt"
 
 SuffixTS = ".ts"
 SuffixHTM = ".htm"
