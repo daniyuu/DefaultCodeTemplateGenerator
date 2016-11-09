@@ -6,7 +6,6 @@ import {0}BootstrapConstants = require("App/{0}/{0}BootstrapConstants");
 import {0}View = require("App/{0}/{0}View");
 import {0}ViewModel = require("App/{0}/{0}ViewModel");
 
-
 import {0}Bootstrap = require("App/{0}/{0}Bootstrap");
 
 suite("{0}Bootstrap", ()=>{1}
