@@ -16,14 +16,8 @@ def generate_page_file(page_name):
     fo.close()
 
 
-pageName = raw_input("What is your page name? Please input it here: ")
-print "Your page name is: ", pageName
-generate_page_file(pageName)
-
-# dir = os.path.dirname(__file__)
-# print dir
-
-
+# fo = open(Constants.UCM_ROOT + "/{0}Page.ts".format("CYY"), "w")
+# fo.close()
 def create_folder(path):
     print "Staring create a folder..."
     if not os.path.exists(path):
@@ -32,3 +26,15 @@ def create_folder(path):
         print '{0}'.format(path), 'has already exist.'
 
     print "[Finished] Create folder {0}".format(path)
+
+
+# create_folder(Constants.UCM_ROOT+'/CYY')
+
+pageName = raw_input("What is your page name? Please input it here: ")
+print "Your page name is: ", pageName
+pageFilePath
+
+pageNewFolderPath = Constants.UCM_ROOT + '/private/UI/UCMWeb/UCMWeb/Scripts/App' + "/{0}".format(pageName)
+
+
+# generate_page_file(pageName)
