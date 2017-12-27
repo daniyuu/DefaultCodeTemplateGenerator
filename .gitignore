@@ -3,3 +3,5 @@ JumpList/
 Cyy/
 TestFeature/
 .pyc
+venv/
+*.pyc

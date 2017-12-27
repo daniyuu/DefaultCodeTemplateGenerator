@@ -1,0 +1,73 @@
+import Constants = require("App/Metadata/Constants");
+import KendoGridExtensions = require("Core/Grid/KendoGridExtensions");
+import CommonBootstrapConstants = require("App/Common/AgentWorkspaceCommonBootstrapConstants");
+import Destroyable = require("Core/Destroy/Destroyable");
+import RoutingConstants = require("Core/Routing/RoutingConstants");
+import {2}BootstrapConstants = require("App/{2}/{2}BootstrapConstants");
+
+class {2}Page extends Destroyable implements Ucm.Core.IApplicationPage {0}
+    private {3}View: Ucm.Core.IView;
+    private commonDataProvider: Ucm.Provider.ICommonDataProviderFactory<AgentWorkspace.IAgentWorkspaceDomainDataProvider>;
+    private pageEventSubscriptionManager: Ucm.Core.IEventSubscriptionManager;
+
+    constructor(private layoutBlocks: Ucm.Core.ApplicationLayoutBlocks<application.ContentCollection>) {0}
+        super();
+
+        this.commonDataProvider = this.CreateDestroyableDependency(CommonBootstrapConstants.CommonDataProviderFactory);
+        this.pageEventSubscriptionManager = this.CreateDestroyableDependency(CommonBootstrapConstants.PageEventSubscriptionManager);
+    {1}
+
+    public Start() {0}
+        this.InitContent();
+        this.SubscribeToPageEvent(Ucm.Core.PageEvent.UserPreferencesChanged);
+    {1}
+
+    private InitContent() {0}
+        this.layoutBlocks.Content.{2}.hide();
+
+        this.pageEventSubscriptionManager.Subscribe(Ucm.Core.PageEvent.RouteChanged, () => {0}
+            this.commonDataProvider.DataFreshness.ResetDataFreshness();
+            this.Build{2}View();
+        {1}, RoutingConstants.{2}Event);
+
+        this.pageEventSubscriptionManager.Subscribe(Ucm.Core.PageEvent.RouteGroupChanged, () => {0}
+            this.DestroyView();
+        {1}, Constants.AnyRouteGroupChangeEvent);
+
+    {1}
+
+    private SubscribeToPageEvent(pageEvent: Ucm.Core.PageEvent) {0}
+        this.pageEventSubscriptionManager.Subscribe(pageEvent, () => {0}
+            if (this.{3}View && this.{3}View.Refresh) {0}
+                this.{3}View.Refresh();
+            {1}
+        {1});
+    {1}
+
+    private Build{2}View() {0}
+
+        if (!this.{3}View) {0}
+            KendoGridExtensions.ShowGridLoadingIcon();
+            this.{3}View = this.CreateDestroyableDependency({2}BootstrapConstants.{2}View, null);
+            this.{3}View.Initialize($(Constants.{2}Container));
+        {1}
+        else {0}
+            this.{3}View.Refresh();
+        {1}
+    {1}
+
+    private DestroyView() {0}
+        if (this.{3}View) {0}
+            this.{3}View.Destroy();
+            this.{3}View = null;
+        {1}
+    {1}
+
+    public Destroy() {0}
+        this.pageEventSubscriptionManager.ClearSubscriptions();
+        this.DestroyView();
+        super.Destroy();
+    {1}
+{1}
+
+export = {2}Page;

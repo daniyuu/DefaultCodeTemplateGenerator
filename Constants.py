@@ -55,7 +55,11 @@ TemplatePathBuilder = "./templates/BuilderTemplate.txt"
 TemplatePathBuilderConstants = './templates/ConstantsBuilderTemplate.txt'
 TemplatePathBuilderMock = "./templates/MockBuilderTemplate.txt"
 
+TemplatePathPage = "./templates/PageTemplate.txt"
+
 SuffixTS = ".ts"
 SuffixHTM = ".htm"
 SuffixDTS = ".d.ts"
 SuffixJS = ".js"
+
+UCM_ROOT = 'D:\Repo\UCM'
