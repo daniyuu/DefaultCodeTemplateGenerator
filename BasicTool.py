@@ -38,6 +38,19 @@ class BasicTool:
         self.insertCode(file_path, 0, value)
         return
 
+    def registerDependency(self, bootstrapFilePath, constantsFileName, dependencyName, isSingleton=False):
+        self.importDependency(bootstrapFilePath, dependencyName)
+        value = """\t\tthis.constructorMapping[{0}.{1}] = this.typeConstructorCasting.Cast({1});\n""".format(
+            constantsFileName, dependencyName)
+        context = "public SetConstructorMapping()"
+        if isSingleton:
+            value = """\t\tthis.singletonConstructorMapping[{0}.{1}] = this.typeConstructorCasting.Cast({1});\n""".format(
+                constantsFileName, dependencyName)
+            context = "public SetSingletonConstructorMapping()"
+
+        self.insertCode(bootstrapFilePath, context, value)
+        return
+
     def getImportMapping(self):
         return self.importMapping
 
@@ -65,7 +78,7 @@ class BasicTool:
 
     def create_a_new_file(self, templatePath, file_path, className):
         print "[Start] Generate ", file_path
-        variable_name = className[0].lower() + className[1:]
+        variable_name = self.getVariableNameByClassName(className)
         fh = open(templatePath)
         template = fh.read()
         fh.close()
@@ -95,3 +108,7 @@ class BasicTool:
         contents = "".join(contents)
         f.write(contents)
         f.close()
+
+    def add_constant(self, constants_file_path, constantName, constantValue):
+        value = """\tpublic static {0}: string = "{1}";\n""".format(constantName, constantValue)
+        self.insertCode(constants_file_path, "}", value, True)

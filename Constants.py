@@ -70,3 +70,6 @@ UCM_ROOT = 'D:/Repo/UCM'
 UCMA_Folder_Script_App = "/private/UI/UCMWeb/UCMWeb/Scripts/App"
 UCMA_CSPROJ_Path = UCM_ROOT + '/private/UI/UCMWeb/UCMWeb/Microsoft.UCM.Web.csproj'
 UCMA_GridColumnDefinition_Path = UCM_ROOT + UCMA_Folder_Script_App + '/GridColumnDefinition'
+
+UCMA_ApplicationBootstrap_Path = UCM_ROOT + UCMA_Folder_Script_App + '/Common/ApplicationBootstrap.ts'
+UCMA_ApplicationBootstrapConstants_Path = UCM_ROOT + UCMA_Folder_Script_App + '/Common/ApplicationBootstrapConstants.ts'

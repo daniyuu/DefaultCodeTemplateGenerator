@@ -1,73 +1,11 @@
 import Constants
 import BasicTool
+import BasicTemplateGenerator
 
 pageName = ''
 workSpace = 1
 workSpacePath = Constants.UCM_ROOT
 featureFolderRoot = ''
-
-
-def generate_page_file(folder_path, page_name):
-    print "Staring generate page file"
-    templatePath = Constants.TemplatePathPage
-    fh = open(templatePath)
-    template = fh.read()
-    fh.close()
-
-    fo = open(folder_path + "{0}Page.ts".format(page_name), "w")
-    fo.write(
-        template.format(Constants.LeftBracket, Constants.RightBracket, page_name, page_name[0].lower() + page_name[1:]))
-    fo.close()
-    print "[Finished] Generate {0}Page.ts file".format(page_name)
-
-
-def generate_basic_class(folder_path, name):
-    templatePath = Constants.TemplatePathBasicClass
-    file_path = folder_path + "/{0}.ts".format(name)
-    basicTool.create_a_new_file(templatePath, file_path, name)
-    return file_path
-
-
-def generate_constants(folder_path, name):
-    templatePath = Constants.TemplatePathBasicConstants
-    file_path = folder_path + "/{0}Constants.ts".format(name)
-    basicTool.create_a_new_file(templatePath, file_path, name)
-    return file_path
-
-
-def generate_bootstrap(folder_path, name):
-    templatePath = Constants.TemplatePathBasicBootstrap
-    file_path = folder_path + "/{0}Bootstrap.ts".format(name)
-    basicTool.create_a_new_file(templatePath, file_path, name)
-
-    # Generate a constants file for bootstrap
-    generate_constants(folder_path, name + "Bootstrap")
-
-    applicationBootstrapConstantsFilePath = Constants.UCM_ROOT + Constants.UCMA_Folder_Script_App + '/Common/ApplicationBootstrapConstants.ts'
-    value = """\tpublic static {0}Bootstrap: string = "{0}Bootstrap";\n""".format(name)
-    basicTool.insertCode(applicationBootstrapConstantsFilePath, "}", value, True)
-    applicationBootstrapFilePath = Constants.UCM_ROOT + Constants.UCMA_Folder_Script_App + '/Common/ApplicationBootstrap.ts'
-
-    basicTool.importDependency(applicationBootstrapFilePath, name + "Bootstrap")
-    mappingVaule = """\t\tthis.singletonConstructorMapping[ApplicationBootstrapConstants.{0}Bootstrap] = this.typeConstructorCasting.Cast({0}Bootstrap);\n""".format(
-        name)
-    basicTool.insertCode(applicationBootstrapFilePath, "public SetSingletonConstructorMapping()", mappingVaule)
-
-    return file_path
-
-
-def generate_gridMetadata(folder_path, name):
-    templatePath = Constants.TemplatePathBasicGridMetadata
-    file_path = folder_path + "/{0}Grid.ts".format(name)
-    basicTool.create_a_new_file(templatePath, file_path, name)
-    return file_path
-
-
-def generate_columnFactory(folder_path, name):
-    templatePath = Constants.TemplatePathBasicColumnFactory
-    file_path = folder_path + "/{0}ColumnFactory.ts".format(name)
-    basicTool.create_a_new_file(templatePath, file_path, name)
-    return file_path
 
 
 def get_workspace():
@@ -83,19 +21,9 @@ def get_page_name():
     return _pageName, _featureFolderRoot
 
 
-def create_new_folder():
-    basicTool.create_folder(featureFolderRoot)
-    return
-
-
 def add_column_to_columnsFile(columns_file_path, column_name):
     value = """\tpublic static {0}: string = "{0}";\n""".format(column_name)
     basicTool.insertCode(columns_file_path, "class ", value)
-
-
-def add_a_constant(constants_file_path, constantName, constantValue):
-    value = """\tpublic static {0}: string = "{1}";\n""".format(constantName, constantValue)
-    basicTool.insertCode(constants_file_path, "{", value)
 
 
 def add_column_definition(columnfactory_file_path, column_name):
@@ -118,7 +46,7 @@ def add_column_definition(columnfactory_file_path, column_name):
 
 def create_column(columns_file_path, columnfactory_file_path, column_name, constants_file_path):
     add_column_to_columnsFile(columns_file_path, column_name)
-    add_a_constant(constants_file_path, column_name, column_name)
+    basicTool.add_constant(constants_file_path, column_name, column_name)
     add_column_definition(columnfactory_file_path, column_name)
     return
 
@@ -163,33 +91,38 @@ def insert_columns_into_gridMetadata(columnFactoryFilePath, gridMetadataFilePath
 
 
 basicTool = BasicTool.BasicTool()
-# generate_page_file(pageNewFolderPath, pageName)
+basicTemplateGenerator = BasicTemplateGenerator(basicTool)
+
 STEP_INFO = "************Step {0}: {1}************"
-# Step 1: Choose UCMA/UCMB
+
 print STEP_INFO.format(1, "Create a new page at UCMA [1] or UCMB [2]:")
 workSpace, workSpacePath = get_workspace()
-# Step 2: Get new page name
+
 print STEP_INFO.format(2, "Get new page name")
 pageName, featureFolderRoot = get_page_name()
-# Step 3: Create a new folder for the new page
+
 print STEP_INFO.format(3, "Create a new folder for the new page")
-create_new_folder()
-# Step 4: Generate a basic bootstrap file
+basicTool.create_folder(featureFolderRoot)
+
 print STEP_INFO.format(4, "Generate a basic bootstrap file")
-bootstrap_file_path = generate_bootstrap(featureFolderRoot, pageName)
-# Step 5: Generate a basic constants file
+bootstrap_file_path = basicTemplateGenerator.generate_bootstrap(featureFolderRoot, pageName)
+
 print STEP_INFO.format(5, "Generate a basic constants file")
-constants_file_path = generate_constants(featureFolderRoot, pageName)
-# Step 6: Generate a basic column file
+constants_file_path = basicTemplateGenerator.generate_constants(featureFolderRoot, pageName)
+
 print STEP_INFO.format(6, "Generate a basic column file")
-columns_file_path = generate_basic_class(Constants.UCMA_GridColumnDefinition_Path, pageName + 'Columns')
-# Step 7: Generate a basic column factory file
+columns_file_path = basicTemplateGenerator.generate_basic_class(Constants.UCMA_GridColumnDefinition_Path,
+                                                                pageName + 'Columns')
+
 print STEP_INFO.format(7, "Generate a basic column factory file")
-columnfactory_file_path = generate_columnFactory(Constants.UCMA_GridColumnDefinition_Path, pageName)
+columnfactory_file_path = basicTemplateGenerator.generate_columnFactory(Constants.UCMA_GridColumnDefinition_Path,
+                                                                        pageName)
 
 print STEP_INFO.format(8, "Create columns")
 create_columns(columns_file_path, columnfactory_file_path, constants_file_path)
 
-gridmetadata_file_path = generate_gridMetadata(featureFolderRoot, pageName)
+print STEP_INFO.format(9, "Create a basic gridMetadata file")
+gridmetadata_file_path = basicTemplateGenerator.generate_gridMetadata(featureFolderRoot, pageName)
 
+print STEP_INFO.format(10, "insert columns into gridMetadata file")
 insert_columns_into_gridMetadata(columnfactory_file_path, gridmetadata_file_path)
