@@ -90,8 +90,9 @@ def insert_columns_into_gridMetadata(columnFactoryFilePath, gridMetadataFilePath
     return
 
 
-basicTool = BasicTool.BasicTool()
-basicTemplateGenerator = BasicTemplateGenerator(basicTool)
+importMapping = {}
+basicTool = BasicTool.BasicTool(importMapping)
+basicTemplateGenerator = BasicTemplateGenerator.BasicTemplateGenerator(basicTool)
 
 STEP_INFO = "************Step {0}: {1}************"
 

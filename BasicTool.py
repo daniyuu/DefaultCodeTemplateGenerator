@@ -3,8 +3,8 @@ import Constants
 
 
 class BasicTool:
-    def __init__(self):
-        self.importMapping = {}
+    def __init__(self, importMapping):
+        self.importMapping = importMapping
         return
 
     def insertCode(self, filePath, context, value, before=False):

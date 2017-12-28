@@ -24,7 +24,7 @@ class BasicTemplateGenerator:
         self.basicTool.create_a_new_file(templatePath, file_path, name)
 
         # Generate a constants file for bootstrap
-        self.generate_constants(self, folder_path, name + "Bootstrap")
+        self.generate_constants(folder_path, name + "Bootstrap")
 
         self.basicTool.add_constant(Constants.UCMA_ApplicationBootstrapConstants_Path, name + "Bootstrap",
                                     name + "Bootstrap")
