@@ -1,0 +1,17 @@
+import Bootstrap = require("Core/RegisterableFactory/Bootstrap");
+
+class {2}Bootstrap extends Bootstrap {0}
+    constructor() {0}
+        super();
+    {1}
+
+    public SetConstructorMapping() {0}
+
+    {1}
+
+    public SetSingletonConstructorMapping(): void {0}
+        
+    {1}
+{1}
+
+export = {2}Bootstrap;

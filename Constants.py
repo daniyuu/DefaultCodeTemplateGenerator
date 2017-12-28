@@ -12,7 +12,6 @@ Builder = "Builder"
 TypeFeatureAll = "TypeFeatureAll"
 TypeApplicationInterface = "TypeApplicationInterface"
 
-
 TypeInterface = "Interface"
 TypeConstants = "Constants"
 TypeBootstrap = "Bootstrap"
@@ -56,10 +55,17 @@ TemplatePathBuilderConstants = './templates/ConstantsBuilderTemplate.txt'
 TemplatePathBuilderMock = "./templates/MockBuilderTemplate.txt"
 
 TemplatePathPage = "./templates/PageTemplate.txt"
+TemplatePathBasicClass = "./templates/BasicClassTemplate.txt"
+TemplatePathBasicBootstrap = "./templates/BasicBootstrapTemplate.txt"
+TemplatePathBasicConstants = "./templates/BasicConstantsTemplate.txt"
+TemplatePathBasicColumnFactory = "./templates/BasicColumnFactoryTemplate.txt"
 
 SuffixTS = ".ts"
 SuffixHTM = ".htm"
 SuffixDTS = ".d.ts"
 SuffixJS = ".js"
 
-UCM_ROOT = 'D:\Repo\UCM'
+UCM_ROOT = 'D:/Repo/UCM'
+UCMA_Folder_Script_App = "/private/UI/UCMWeb/UCMWeb/Scripts/App"
+UCMA_CSPROJ_Path = UCM_ROOT + '/private/UI/UCMWeb/UCMWeb/Microsoft.UCM.Web.csproj'
+UCMA_GridColumnDefinition_Path = UCM_ROOT + UCMA_Folder_Script_App + '/GridColumnDefinition'
