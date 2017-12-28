@@ -59,6 +59,7 @@ TemplatePathBasicClass = "./templates/BasicClassTemplate.txt"
 TemplatePathBasicBootstrap = "./templates/BasicBootstrapTemplate.txt"
 TemplatePathBasicConstants = "./templates/BasicConstantsTemplate.txt"
 TemplatePathBasicColumnFactory = "./templates/BasicColumnFactoryTemplate.txt"
+TemplatePathBasicGridMetadata = "./templates/BasicGridMetadataTemplate.txt"
 
 SuffixTS = ".ts"
 SuffixHTM = ".htm"

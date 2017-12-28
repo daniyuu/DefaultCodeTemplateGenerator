@@ -1,0 +1,46 @@
+import GridMetadata = require("Core/Metadata/GridMetadata");
+import CommonBootstrapConstants = require("App/Common/AgentWorkspaceCommonBootstrapConstants");
+import Constants = require("App/Metadata/Constants");
+import ColumnControls = require("Core/GridColumnDefinition/ColumnControls");
+import GridColumnBootstrapConstants = require("App/GridColumnDefinition/AgentWorkspaceGridColumnBootstrapConstants");
+
+class {2}Grid extends GridMetadata {0}
+
+    public GridOptions: kendo.ui.GridOptions;
+
+    private columnControlFactory: Ucm.Grid.IGridColumnFactory;
+    private commonColumnFactory: Ucm.Grid.IGridColumnFactory;
+    private {3}ColumnFactory: Ucm.Grid.IGridColumnFactory;
+    private localizationService: Ucm.Services.ILocalizationService;
+
+    constructor() {0}
+        super();
+        this.localizationService = this.CreateDestroyableDependency(CommonBootstrapConstants.LocalizationServiceFactory);
+        this.commonColumnFactory = this.registerableFactory.Create(GridColumnBootstrapConstants.CommonColumnFactory);
+        this.columnControlFactory = this.registerableFactory.Create(GridColumnBootstrapConstants.ColumnControlFactory);
+        this.GridOptions = this.GetGridOptions();
+        this.SetDefaultPreferences();
+        this.InitializeDefaultPreferences();
+    {1}
+
+    private GetGridOptions(): kendo.ui.GridOptions {0}
+        this.GridColumns = [
+            this.columnControlFactory.CreateColumn(ColumnControls.CheckboxControl, 0, {0} isDefault: true {1}),
+            //TODO: Add Columns
+        ];
+
+        //TODO: Modify it
+        var {3}GridOptions = $.extend(true, {0}{1}, this.DefaultGridOptions, {0}
+            useKOTemplates: false,
+            filterable: false,
+            columns: this.GridColumns
+        {1});
+
+        return {3}GridOptions;
+    {1}
+
+    private InitializeDefaultPreferences(): void {0}
+    {1}
+{1}
+
+export = {2}Grid;
