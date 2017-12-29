@@ -21,7 +21,7 @@ class BasicTemplateGenerator:
     def generate_bootstrap(self, folder_path, name):
         templatePath = Constants.TemplatePathBasicBootstrap
         file_path = folder_path + "/{0}Bootstrap.ts".format(name)
-        self.basicTool.create_a_new_file(templatePath, file_path, name)
+        self.basicTool.create_a_new_file(templatePath, file_path, name + "Bootstrap")
 
         # Generate a constants file for bootstrap
         self.generate_constants(folder_path, name + "Bootstrap")
@@ -47,3 +47,4 @@ class BasicTemplateGenerator:
         return self.generate_file_by_template(Constants.TemplatePathPage, folder_path,
                                               name + "Page",
                                               Constants.SuffixTS)
+
