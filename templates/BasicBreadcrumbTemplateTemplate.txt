@@ -1,0 +1,10 @@
+<script id="{2}" type="text/html">
+    <ul id="breadcrumb-navigation-container" class="breadcrumb" data-bind="foreach: Items">
+        <li>
+            <a class="linkclass" href="#" data-bind="text: Caption, attr: {0} href: Url, id: 'BreadcrumbNav_' + $index() {1}"></a>
+        </li>
+    </ul>
+    <div class="breadcrumbDefault">
+    </div>
+
+</script>

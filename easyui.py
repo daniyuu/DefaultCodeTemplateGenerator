@@ -90,40 +90,53 @@ def insert_columns_into_gridMetadata(columnFactoryFilePath, gridMetadataFilePath
     return
 
 
+def printStepLog(stepNo, content, isDebug=True):
+    STEP_INFO = "************Step {0}: {1}************"
+    if isDebug:
+        print STEP_INFO.format(stepNo, content)
+
+    return stepNo + 1
+
+
 importMapping = {}
 basicTool = BasicTool.BasicTool(importMapping)
 basicTemplateGenerator = BasicTemplateGenerator.BasicTemplateGenerator(basicTool)
+stepNo = 0
 
-STEP_INFO = "************Step {0}: {1}************"
-
-print STEP_INFO.format(1, "Create a new page at UCMA [1] or UCMB [2]:")
+stepNo = printStepLog(stepNo, "Get workspace")
 workSpace, workSpacePath = get_workspace()
 
-print STEP_INFO.format(2, "Get new page name")
+stepNo = printStepLog(stepNo, "Get new page name")
 pageName, featureFolderRoot = get_page_name()
 
-print STEP_INFO.format(3, "Create a new folder for the new page")
+stepNo = printStepLog(stepNo, "Create a new folder for the new page")
 basicTool.create_folder(featureFolderRoot)
 
-print STEP_INFO.format(4, "Generate a basic bootstrap file")
+stepNo = printStepLog(stepNo, "Generate a basic bootstrap file")
 bootstrap_file_path = basicTemplateGenerator.generate_bootstrap(featureFolderRoot, pageName)
 
-print STEP_INFO.format(5, "Generate a basic constants file")
+stepNo = printStepLog(stepNo, "Generate a basic constants file")
 constants_file_path = basicTemplateGenerator.generate_constants(featureFolderRoot, pageName)
 
-print STEP_INFO.format(6, "Generate a basic column file")
+stepNo = printStepLog(stepNo, "Generate a basic column file")
 columns_file_path = basicTemplateGenerator.generate_basic_class(Constants.UCMA_GridColumnDefinition_Path,
                                                                 pageName + 'Columns')
 
-print STEP_INFO.format(7, "Generate a basic column factory file")
+stepNo = printStepLog(stepNo, "Generate a basic column factory file")
 columnfactory_file_path = basicTemplateGenerator.generate_columnFactory(Constants.UCMA_GridColumnDefinition_Path,
                                                                         pageName)
-
-print STEP_INFO.format(8, "Create columns")
+stepNo = printStepLog(stepNo, "Create columns")
 create_columns(columns_file_path, columnfactory_file_path, constants_file_path)
 
-print STEP_INFO.format(9, "Create a basic gridMetadata file")
+stepNo = printStepLog(stepNo, "Create a basic gridMetadata file")
 gridmetadata_file_path = basicTemplateGenerator.generate_gridMetadata(featureFolderRoot, pageName)
 
-print STEP_INFO.format(10, "insert columns into gridMetadata file")
+stepNo = printStepLog(stepNo, "insert columns into gridMetadata file")
 insert_columns_into_gridMetadata(columnfactory_file_path, gridmetadata_file_path)
+
+stepNo = printStepLog(stepNo, "Create a basic repository file")
+repository_file_path = basicTemplateGenerator.generate_repository(featureFolderRoot, pageName)
+
+stepNo = printStepLog(stepNo, "Create a default breadcrumb")
+
+

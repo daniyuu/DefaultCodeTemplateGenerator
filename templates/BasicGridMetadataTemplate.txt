@@ -4,7 +4,7 @@ import Constants = require("App/Metadata/Constants");
 import ColumnControls = require("Core/GridColumnDefinition/ColumnControls");
 import GridColumnBootstrapConstants = require("App/GridColumnDefinition/AgentWorkspaceGridColumnBootstrapConstants");
 
-class {2}Grid extends GridMetadata {0}
+class {2} extends GridMetadata {0}
 
     public GridOptions: kendo.ui.GridOptions;
 
@@ -36,11 +36,11 @@ class {2}Grid extends GridMetadata {0}
             columns: this.GridColumns
         {1});
 
-        return {3}GridOptions;
+        return {3}Options;
     {1}
 
     private InitializeDefaultPreferences(): void {0}
     {1}
 {1}
 
-export = {2}Grid;
+export = {2};

@@ -2,13 +2,13 @@ import Constants = require("App/Metadata/Constants");
 import ViewModel = require("App/ViewModels/ViewModel");
 import RegisterableFactory = require("App/Common/RegisterableFactory");
 
-class {0} extends ViewModel {1}
+class {2} extends ViewModel {0}
 
-    constructor() {1}
+    constructor() {0}
         super();
         this.Initialize();
-    {2}
+    {1}
 
-{2}
+{1}
 
-export = {0};
+export = {2};

@@ -10,7 +10,7 @@ import ColumnHeaderTemplateType = require("Core/GridColumn/ColumnHeaderTemplateT
 import HtmlTag = require("Core/Metadata/HtmlTag");
 import {2}Constants = require("App/{2}/{2}Constants");
 
-class {2}ColumnFactory<TColumn, TColumnMetadata> extends ColumnFactory<TColumn, TColumnMetadata> {0}
+class {2}<TColumn, TColumnMetadata> extends ColumnFactory<TColumn, TColumnMetadata> {0}
 
     private localizationService: Ucm.Services.ILocalizationService;
     private domainDataHandler: AgentWorkspace.IAgentWorkspaceDomainDataHandler;
@@ -35,5 +35,5 @@ class {2}ColumnFactory<TColumn, TColumnMetadata> extends ColumnFactory<TColumn, 
 
 {1}
 
-export = {2}ColumnFactory;
+export = {2};
 

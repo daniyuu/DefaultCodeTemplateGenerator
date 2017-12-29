@@ -1,0 +1,22 @@
+import View = require("App/Views/View");
+
+class {2} extends View<> {0}
+
+    constructor() {0}
+        super({2}View.GetViewOptions());
+    {1}
+
+    public Initialize($container: JQuery): application.IView {0}
+        super.Initialize($container, data);
+        return this;
+    {1}
+
+    static GetViewOptions(): Model.ViewOptions {0}
+        return <Model.ViewOptions>{1}
+
+        {1}
+    {1}
+
+{1}
+
+export = {2};

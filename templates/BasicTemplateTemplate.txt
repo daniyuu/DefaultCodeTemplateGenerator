@@ -1,0 +1,3 @@
+<script id="{2}" type="text/html">
+
+</script>

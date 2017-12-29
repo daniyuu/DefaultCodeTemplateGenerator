@@ -1,0 +1,18 @@
+import Constants = require("App/Metadata/Constants");
+import CommonBootstrapConstants = require("App/Common/AgentWorkspaceCommonBootstrapConstants");
+import Repository = require("Core/Destroy/Repository");
+
+class {2}Repository extends Repository implements Services.I{2}Repository {0}
+
+    private dataTableRepository: Ucm.Repository.IDataTableRepository;
+
+    constructor() {0}
+        super();
+        this.dataTableRepository = this.CreateDestroyableDependency(CommonBootstrapConstants.DataTableRepository);
+    {1}
+
+    //TODO: Add Methods
+
+{1}
+
+export = {2}Repository;
