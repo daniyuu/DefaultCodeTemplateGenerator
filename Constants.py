@@ -66,14 +66,47 @@ TemplatePathBasicView = "./templates/BasicViewTemplate.txt"
 TemplatePathBasicBreadcrumbTemplate = "./templates/BasicBreadcrumbTemplateTemplate.txt"
 TemplatePathBasicTemplate = "./templates/BasicTemplateTemplate.txt"
 
+FILE_TYPE_Typescript = 0
+FILE_TYPE_TypescriptDefinition = 1
+FILE_TYPE_Content = 2
+
+TYPE_STRING = 'string'
+TYPE_NUMBER = 'number'
+TYPE_BOOLEAN = 'boolean'
+
 SuffixTS = ".ts"
 SuffixHTM = ".htm"
 SuffixDTS = ".d.ts"
 SuffixJS = ".js"
 
+CLASS_TYPE_BASIC = 0
+CLASS_TYPE_BOOTSTRAP = 1
+CLASS_TYPE_CONSTANTS = 0
+CLASS_TYPE_PAGE = 2
+CLASS_TYPE_COLUMN_FACTORY = 3
+CLASS_TYPE_REPOSITORY = 4
+
+TEMPLATES_PATHS = {
+    CLASS_TYPE_BASIC: TemplatePathBasicClass,
+    CLASS_TYPE_BOOTSTRAP: TemplatePathBasicBootstrap,
+    CLASS_TYPE_PAGE: TemplatePathPage,
+    CLASS_TYPE_COLUMN_FACTORY: TemplatePathBasicColumnFactory,
+    CLASS_TYPE_REPOSITORY: TemplatePathBasicRepository
+}
+
 UCM_ROOT = 'D:/Repo/UCM'
 UCMA_Folder_Script_App = "/private/UI/UCMWeb/UCMWeb/Scripts/App"
+
+UCM_A_PROJECT = 0
+UCM_CORE_PROJECT = 1
+UCM_B_PROJECT = 2
+
 UCMA_CSPROJ_Path = UCM_ROOT + '/private/UI/UCMWeb/UCMWeb/Microsoft.UCM.Web.csproj'
+UCMCORE_CSPROJ_PATH = UCM_ROOT + '/private/UI/UCMWeb/UCMWeb.TypeScript/Core/UCMWeb.TypeScript.Core.csproj'
+UCMB_CSPROJ_PATH = UCM_ROOT + '/private/UI/UCMWeb/UCMWeb.TypeScript/BusinessReporting/UCMWeb.TypeScript.BusinessReporting.csproj'
+
+UCM_CSPROJ_PATHES = [UCMA_CSPROJ_Path, UCMCORE_CSPROJ_PATH, UCMB_CSPROJ_PATH]
+
 UCMA_GridColumnDefinition_Path = UCM_ROOT + UCMA_Folder_Script_App + '/GridColumnDefinition'
 
 UCMA_ApplicationBootstrap_Path = UCM_ROOT + UCMA_Folder_Script_App + '/Common/ApplicationBootstrap.ts'
