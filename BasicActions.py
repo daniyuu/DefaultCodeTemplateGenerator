@@ -25,6 +25,13 @@ class BasicActions:
         f.close()
         return
 
+    def insertCodeAtTail(self, filePath, value):
+        contents = self.readFile(filePath)
+        index = len(contents) - 1
+        contents.insert(index, value)
+        self.overrideFile(filePath, contents)
+        return
+
     def insertCodeByIndex(self, filePath, value, index):
         contents = self.readFile(filePath)
         contents.insert(index, value)
@@ -38,7 +45,7 @@ class BasicActions:
             currentLine = contents[index]
             nextLine = contents[index + 1]
             if (beforeContext in currentLine or beforeContext == "BEFORE") and (
-                            afterContext in nextLine or afterContext == "AFTER"):
+                    afterContext in nextLine or afterContext == "AFTER"):
                 codeLine = index + 1
                 break
 
@@ -66,10 +73,19 @@ class BasicActions:
         self.overrideFile(filePath, contents)
         return
 
-#
-#
-#
-# filePath = "D:/Repo/UCM/private/UI/UCMWeb/UCMWeb/Scripts/App/Common/AgentWorkspaceCommonBootstrap.ts"
-# value = """import FeaturePilotReadOnlyPage = require("App/FeaturePilotReadOnlyPage");\n"""
-# ba = BasicActions()
-# ba.insertCode(filePath, value, "import", "\n")
+    def getDependencyNameFromPath(self, path):
+        name = path.split('/')[-1].split('.')[0]
+        return name
+
+    def getImportPathFromAbsolutePath(self, absolutePath):
+        importPath = ""
+        flag = False
+        for item in absolutePath.split('/'):
+            if item == 'Core' or item == 'App':
+                flag = True
+            if flag:
+                if 'Core' in importPath:
+                    continue
+                importPath += item.split('.')[0] + "/"
+
+        return importPath[:-1]

@@ -13,7 +13,7 @@ class {2} extends View<{2}Model> {0}
     {1}
 
     static GetViewOptions(): Model.ViewOptions {0}
-        return <Model.ViewOptions>{1}
+        return <Ucm.Core.ViewOptions>{0}
 
         {1}
     {1}

@@ -112,3 +112,5 @@ class BasicTool:
     def add_constant(self, constants_file_path, constantName, constantValue):
         value = """\tpublic static {0}: string = "{1}";\n""".format(constantName, constantValue)
         self.insertCode(constants_file_path, "}", value, True)
+
+

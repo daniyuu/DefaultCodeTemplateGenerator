@@ -121,3 +121,29 @@ UCMA_GridColumnDefinition_Path = UCM_ROOT + UCMA_Folder_Script_App + '/GridColum
 
 UCMA_ApplicationBootstrap_Path = UCM_ROOT + UCMA_Folder_Script_App + '/Common/ApplicationBootstrap.ts'
 UCMA_ApplicationBootstrapConstants_Path = UCM_ROOT + UCMA_Folder_Script_App + '/Common/ApplicationBootstrapConstants.ts'
+
+UCMA_AgentWorkspaceCommonBootstrapConstants_Path = UCM_ROOT + UCMA_Folder_Script_App + '/Common/AgentWorkspaceCommonBootstrapConstants.ts'
+
+UCMA_AgentWorkspaceCommonBootstrap_Path = UCM_ROOT + UCMA_Folder_Script_App + '/Common/AgentWorkspaceCommonBootstrap.ts'
+
+UCMA_AgentWorkspaceGridNames_Path = UCM_ROOT + UCMA_Folder_Script_App + '/Grid/AgentWorkspaceGridNames.ts'
+
+UCMA_AgentWorkspaceGridColumnBootstrap_Path = UCM_ROOT + UCMA_Folder_Script_App + '/GridColumnDefinition/AgentWorkspaceGridColumnBootstrap.ts'
+
+UCMA_AgentWorkspaceGridColumnBootstrapConstants_Path = UCM_ROOT + UCMA_Folder_Script_App + '/GridColumnDefinition/AgentWorkspaceGridColumnBootstrapConstants.ts'
+
+UCMA_GRIDCOUMNDEFINITION_FOLDER_PATH = UCM_ROOT + UCMA_Folder_Script_App + '/GridColumnDefinition'
+
+UCM_APPBOOTSTRAPPER_PATH = UCM_ROOT + UCMA_Folder_Script_App + "/appBootstrapper.ts"
+
+UCM_APPLICATION_PATH = UCM_ROOT + UCMA_Folder_Script_App + "/Application.ts"
+UCM_ContentCollection_PATH = UCM_ROOT + UCMA_Folder_Script_App + "/ContentCollection.d.ts"
+UCM_Index_cshtml_path = UCM_ROOT + "/private/UI/UCMWeb/UCMWeb/Views/AgentWorkspace/Index.cshtml"
+
+UCM_CORE_Path = UCM_ROOT + "/private/UI/UCMWeb/UCMWeb.TypeScript/Core/Core"
+
+UCM_CORE_Grid_Path = UCM_CORE_Path + '/Grid'
+UCM_CORE_KendoGridExtensions_Path = UCM_CORE_Grid_Path + '/KendoGridExtensions.ts'
+UCM_CORE_RoutingMetadata = UCM_CORE_Path + "/Metadata/RoutingMetadataV2.ts"
+UCM_CORE_RoutingConstants = UCM_CORE_Path + "/Routing/RoutingConstants.ts"
+

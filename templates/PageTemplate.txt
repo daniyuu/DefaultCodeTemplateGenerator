@@ -1,4 +1,3 @@
-import Constants = require("App/Metadata/Constants");
 import KendoGridExtensions = require("Core/Grid/KendoGridExtensions");
 import CommonBootstrapConstants = require("App/Common/AgentWorkspaceCommonBootstrapConstants");
 import Destroyable = require("Core/Destroy/Destroyable");
@@ -49,7 +48,7 @@ class {2}Page extends Destroyable implements Ucm.Core.IApplicationPage {0}
         if (!this.{3}View) {0}
             KendoGridExtensions.ShowGridLoadingIcon();
             this.{3}View = this.CreateDestroyableDependency({2}BootstrapConstants.{2}View, null);
-            this.{3}View.Initialize($(Constants.{2}Container));
+            this.{3}View.Initialize($({2}Constants.{2}Container));
         {1}
         else {0}
             this.{3}View.Refresh();

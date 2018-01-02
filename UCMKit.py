@@ -1,4 +1,3 @@
-import sqlite3
 import Constants
 import UCMActions
 
@@ -14,4 +13,4 @@ class UCMKit:
 
 
 kit = UCMKit()
-kit.createNewPage(Constants.UCM_A_PROJECT, 'NewFeatureCyy')
+kit.createNewPage(Constants.UCM_A_PROJECT, 'FeaturePilotReadOnlyV2')
