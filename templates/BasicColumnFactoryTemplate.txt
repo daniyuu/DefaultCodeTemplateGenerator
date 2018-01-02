@@ -1,26 +1,9 @@
 import ColumnFactory = require("Core/GridColumn/ColumnFactory");
-import Constants = require("App/Metadata/Constants");
-import CommonBootstrapConstants = require("App/Common/AgentWorkspaceCommonBootstrapConstants");
-import ResourceKeys = require("App/Metadata/ResourceKeys");
 import ColumnType = require("Core/GridColumn/ColumnType");
-import IconTypes = require("Core/GridColumn/IconTypes");
-import HelpConstants = require("App/Constants/HelpConstants");
-import {2}Columns = require("App/GridColumnDefinition/{2}Columns");
-import ColumnHeaderTemplateType = require("Core/GridColumn/ColumnHeaderTemplateType");
-import HtmlTag = require("Core/Metadata/HtmlTag");
-import {2}Constants = require("App/{2}/{2}Constants");
 
 class {2}<TColumn, TColumnMetadata> extends ColumnFactory<TColumn, TColumnMetadata> {0}
-
-    private localizationService: Ucm.Services.ILocalizationService;
-    private domainDataHandler: AgentWorkspace.IAgentWorkspaceDomainDataHandler;
-    private htmlBuilder: Ucm.Builder.IHtmlBuilder;
-
     constructor() {0}
         super();
-        this.localizationService = this.CreateDestroyableDependency(CommonBootstrapConstants.LocalizationServiceFactory);
-        this.domainDataHandler = this.CreateDestroyableDependency(CommonBootstrapConstants.DomainDataHandler);
-        this.htmlBuilder = this.CreateDestroyableDependency(CommonBootstrapConstants.HtmlBuilderFactory);
         this.SetGridFilterValue();
         this.createColumnMetadataMapping();
     {1}

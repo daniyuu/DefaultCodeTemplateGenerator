@@ -10,12 +10,9 @@ class {2} extends GridMetadata {0}
 
     private columnControlFactory: Ucm.Grid.IGridColumnFactory;
     private commonColumnFactory: Ucm.Grid.IGridColumnFactory;
-    private {3}ColumnFactory: Ucm.Grid.IGridColumnFactory;
-    private localizationService: Ucm.Services.ILocalizationService;
 
     constructor() {0}
         super();
-        this.localizationService = this.CreateDestroyableDependency(CommonBootstrapConstants.LocalizationServiceFactory);
         this.commonColumnFactory = this.registerableFactory.Create(GridColumnBootstrapConstants.CommonColumnFactory);
         this.columnControlFactory = this.registerableFactory.Create(GridColumnBootstrapConstants.ColumnControlFactory);
         this.GridOptions = this.GetGridOptions();
@@ -37,9 +34,11 @@ class {2} extends GridMetadata {0}
         {1});
 
         return {3}Options;
+
     {1}
 
     private InitializeDefaultPreferences(): void {0}
+
     {1}
 {1}
 

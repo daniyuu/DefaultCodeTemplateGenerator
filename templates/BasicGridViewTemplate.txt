@@ -1,0 +1,36 @@
+import GridViewV2 = require("Core/Grid/GridViewV2");
+
+class {2} extends GridViewV2 {0}
+    public preferenceKey: string;
+    private $gridViewContainer: JQuery;
+    private gridMetadata: Ucm.Grid.GridMetadata;
+
+    constructor() {0}
+        super();
+
+    {1}
+
+    public get GridName(): string {0}
+
+    {1}
+
+    get PreferenceKey() {0} return this.preferenceKey; {1}
+
+    public Initialize($container: JQuery): {2} {0}
+        super.Initialize(this.$gridViewContainer);
+        return this;
+    {1}
+
+    public GetData(options?: kendo.data.DataSourceTransportReadOptions, forceToGetAllPages = false, recordingId?: string) {0}
+
+    {1}
+
+    public GetMetadata(): Ucm.Grid.GridMetadata {0}
+        return this.gridMetadata;
+    {1}
+
+
+
+{1}
+
+export  = {2};

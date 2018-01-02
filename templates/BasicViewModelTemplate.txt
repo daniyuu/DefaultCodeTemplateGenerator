@@ -1,0 +1,11 @@
+import ViewModel = require("Core/ViewModel/ViewModel");
+
+class {2} extends ViewModel {0}
+
+    constructor() {0}
+        super();
+    {1}
+
+{1}
+
+export = {2};

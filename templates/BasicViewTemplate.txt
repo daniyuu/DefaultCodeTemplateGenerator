@@ -1,6 +1,7 @@
 import View = require("App/Views/View");
+import ViewModel = require("Core/ViewModel/ViewModel");
 
-class {2} extends View<> {0}
+class {2} extends View<{2}Model> {0}
 
     constructor() {0}
         super({2}View.GetViewOptions());

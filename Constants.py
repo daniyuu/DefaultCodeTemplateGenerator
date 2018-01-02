@@ -65,6 +65,7 @@ TemplatePathBasicViewModel = "./templates/BasicViewModelTemplate.txt"
 TemplatePathBasicView = "./templates/BasicViewTemplate.txt"
 TemplatePathBasicBreadcrumbTemplate = "./templates/BasicBreadcrumbTemplateTemplate.txt"
 TemplatePathBasicTemplate = "./templates/BasicTemplateTemplate.txt"
+TemplatePathBasicGridView = "./templates/BasicGridViewTemplate.txt"
 
 FILE_TYPE_Typescript = 0
 FILE_TYPE_TypescriptDefinition = 1
@@ -79,19 +80,28 @@ SuffixHTM = ".htm"
 SuffixDTS = ".d.ts"
 SuffixJS = ".js"
 
-CLASS_TYPE_BASIC = 0
-CLASS_TYPE_BOOTSTRAP = 1
-CLASS_TYPE_CONSTANTS = 0
-CLASS_TYPE_PAGE = 2
-CLASS_TYPE_COLUMN_FACTORY = 3
-CLASS_TYPE_REPOSITORY = 4
+CLASS_TYPE_BASIC = CLASS_TYPE_CONSTANTS = "CLASS_TYPE_BASIC"
+CLASS_TYPE_BOOTSTRAP = "CLASS_TYPE_BOOTSTRAP"
+CLASS_TYPE_PAGE = "CLASS_TYPE_PAGE"
+CLASS_TYPE_COLUMN_FACTORY = "CLASS_TYPE_COLUMN_FACTORY"
+CLASS_TYPE_REPOSITORY = "CLASS_TYPE_REPOSITORY"
+CLASS_TYPE_GRID_METADATA = "CLASS_TYPE_GRID_METADATA"
+CLASS_TYPE_GRID_VIEW = "CLASS_TYPE_GRID_VIEW"
+CLASS_TYPE_VIEW = "CLASS_TYPE_VIEW"
+CLASS_TYPE_VIEW_MODEL = "CLASS_TYPE_VIEW_MODEL"
+CLASS_TYPE_TEMPLATE = "CLASS_TYPE_TEMPLATE"
 
 TEMPLATES_PATHS = {
     CLASS_TYPE_BASIC: TemplatePathBasicClass,
     CLASS_TYPE_BOOTSTRAP: TemplatePathBasicBootstrap,
     CLASS_TYPE_PAGE: TemplatePathPage,
     CLASS_TYPE_COLUMN_FACTORY: TemplatePathBasicColumnFactory,
-    CLASS_TYPE_REPOSITORY: TemplatePathBasicRepository
+    CLASS_TYPE_REPOSITORY: TemplatePathBasicRepository,
+    CLASS_TYPE_GRID_METADATA: TemplatePathBasicGridMetadata,
+    CLASS_TYPE_VIEW: TemplatePathBasicView,
+    CLASS_TYPE_VIEW_MODEL: TemplatePathBasicViewModel,
+    CLASS_TYPE_GRID_VIEW: TemplatePathBasicGridView,
+    CLASS_TYPE_TEMPLATE: TemplatePathBasicTemplate
 }
 
 UCM_ROOT = 'D:/Repo/UCM'
@@ -105,7 +115,7 @@ UCMA_CSPROJ_Path = UCM_ROOT + '/private/UI/UCMWeb/UCMWeb/Microsoft.UCM.Web.cspro
 UCMCORE_CSPROJ_PATH = UCM_ROOT + '/private/UI/UCMWeb/UCMWeb.TypeScript/Core/UCMWeb.TypeScript.Core.csproj'
 UCMB_CSPROJ_PATH = UCM_ROOT + '/private/UI/UCMWeb/UCMWeb.TypeScript/BusinessReporting/UCMWeb.TypeScript.BusinessReporting.csproj'
 
-UCM_CSPROJ_PATHES = [UCMA_CSPROJ_Path, UCMCORE_CSPROJ_PATH, UCMB_CSPROJ_PATH]
+UCM_CSPROJ_PATHS = [UCMA_CSPROJ_Path, UCMCORE_CSPROJ_PATH, UCMB_CSPROJ_PATH]
 
 UCMA_GridColumnDefinition_Path = UCM_ROOT + UCMA_Folder_Script_App + '/GridColumnDefinition'
 

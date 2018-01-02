@@ -39,7 +39,7 @@ class BasicActions:
             nextLine = contents[index + 1]
             if (beforeContext in currentLine or beforeContext == "BEFORE") and (
                             afterContext in nextLine or afterContext == "AFTER"):
-                codeLine = index
+                codeLine = index + 1
                 break
 
         contents.insert(codeLine, value)
@@ -66,10 +66,10 @@ class BasicActions:
         self.overrideFile(filePath, contents)
         return
 
-
-
-
-filePath = "D:/Repo/UCM/private/UI/UCMWeb/UCMWeb/Scripts/App/Common/AgentWorkspaceCommonBootstrap.ts"
-value = """import FeaturePilotReadOnlyPage = require("App/FeaturePilotReadOnlyPage");\n"""
-ba = BasicActions()
-ba.insertCode(filePath, value, "import", "\n")
+#
+#
+#
+# filePath = "D:/Repo/UCM/private/UI/UCMWeb/UCMWeb/Scripts/App/Common/AgentWorkspaceCommonBootstrap.ts"
+# value = """import FeaturePilotReadOnlyPage = require("App/FeaturePilotReadOnlyPage");\n"""
+# ba = BasicActions()
+# ba.insertCode(filePath, value, "import", "\n")

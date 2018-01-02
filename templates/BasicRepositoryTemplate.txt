@@ -1,8 +1,7 @@
-import Constants = require("App/Metadata/Constants");
 import CommonBootstrapConstants = require("App/Common/AgentWorkspaceCommonBootstrapConstants");
 import Repository = require("Core/Destroy/Repository");
 
-class {2}Repository extends Repository implements Services.I{2}Repository {0}
+class {2} extends Repository {0}
 
     private dataTableRepository: Ucm.Repository.IDataTableRepository;
 
@@ -15,4 +14,4 @@ class {2}Repository extends Repository implements Services.I{2}Repository {0}
 
 {1}
 
-export = {2}Repository;
+export = {2};
