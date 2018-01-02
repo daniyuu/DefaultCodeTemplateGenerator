@@ -146,4 +146,5 @@ UCM_CORE_Grid_Path = UCM_CORE_Path + '/Grid'
 UCM_CORE_KendoGridExtensions_Path = UCM_CORE_Grid_Path + '/KendoGridExtensions.ts'
 UCM_CORE_RoutingMetadata = UCM_CORE_Path + "/Metadata/RoutingMetadataV2.ts"
 UCM_CORE_RoutingConstants = UCM_CORE_Path + "/Routing/RoutingConstants.ts"
+UCMA_AgentWorkspaceRouteRegistrantV2_Path = UCM_ROOT + UCMA_Folder_Script_App + "/Routing/AgentWorkspaceRouteRegistrantV2.ts"
 

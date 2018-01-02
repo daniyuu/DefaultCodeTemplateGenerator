@@ -295,3 +295,6 @@ class UCMActions:
         self.basicActions.insertCodeAtTail(Constants.UCM_CORE_RoutingMetadata, value)
         self.addConstant(Constants.UCM_CORE_RoutingConstants, name + "Event", name)
         self.addConstant(Constants.UCM_CORE_RoutingConstants, name + "Page", name + "Page")
+        self.basicActions.insertCode(Constants.UCMA_AgentWorkspaceRouteRegistrantV2_Path,
+                                     "\t\t\tRoutingMetadataV2.{0}Route,\n".format(name),
+                                     "RoutingMetadataV2.TacticReadOnlyRoute,")
