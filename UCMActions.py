@@ -18,12 +18,12 @@ class UCMActions:
         return
 
     def registerTSFile(self, csprojPath, fileRegisterPath):
-        value = """\t<TypeScriptCompile Include="{0}">\n""".format(fileRegisterPath.decode('string_escape'))
+        value = """\t\t<TypeScriptCompile Include="{0}" />\n""".format(fileRegisterPath.decode('string_escape'))
         self.ba.insertCode(csprojPath, value, "<TypeScriptCompile", "<TypeScriptCompile")
         return
 
     def registerContentFile(self, csprojPath, fileRegisterPath):
-        value = """\t<Content Include="{0}">\n""".format(fileRegisterPath.decode('string_escape'))
+        value = """\t\t<Content Include="{0}" />\n""".format(fileRegisterPath.decode('string_escape'))
         self.ba.insertCode(csprojPath, value, "<Content", "<Content")
         return
 
