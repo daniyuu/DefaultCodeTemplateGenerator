@@ -66,6 +66,8 @@ TemplatePathBasicView = "./templates/BasicViewTemplate.txt"
 TemplatePathBasicBreadcrumbTemplate = "./templates/BasicBreadcrumbTemplateTemplate.txt"
 TemplatePathBasicTemplate = "./templates/BasicTemplateTemplate.txt"
 TemplatePathBasicGridView = "./templates/BasicGridViewTemplate.txt"
+TemplatePathBasicUT = "./templates/BasicUTTemplate.txt"
+TemplatePathBootstrapUT = "./templates/BootstrapUTTemplate.txt"
 
 FILE_TYPE_Typescript = 0
 FILE_TYPE_TypescriptDefinition = 1
@@ -90,6 +92,8 @@ CLASS_TYPE_GRID_VIEW = "CLASS_TYPE_GRID_VIEW"
 CLASS_TYPE_VIEW = "CLASS_TYPE_VIEW"
 CLASS_TYPE_VIEW_MODEL = "CLASS_TYPE_VIEW_MODEL"
 CLASS_TYPE_TEMPLATE = "CLASS_TYPE_TEMPLATE"
+TEST_TYPE_BASIC_UT_TEMPLATE = "TEST_TYPE_BASIC_UT_TEMPLATE"
+TEST_TYPE_BOOTSTRAP_TEMPLATE = "TEST_TYPE_BOOTSTRAP_TEMPLATE"
 
 TEMPLATES_PATHS = {
     CLASS_TYPE_BASIC: TemplatePathBasicClass,
@@ -101,11 +105,18 @@ TEMPLATES_PATHS = {
     CLASS_TYPE_VIEW: TemplatePathBasicView,
     CLASS_TYPE_VIEW_MODEL: TemplatePathBasicViewModel,
     CLASS_TYPE_GRID_VIEW: TemplatePathBasicGridView,
-    CLASS_TYPE_TEMPLATE: TemplatePathBasicTemplate
+    CLASS_TYPE_TEMPLATE: TemplatePathBasicTemplate,
+
+}
+
+TEST_TEMPLATES_PATHS = {
+TEST_TYPE_BASIC_UT_TEMPLATE: TemplatePathBasicUT,
+TEST_TYPE_BOOTSTRAP_TEMPLATE: TemplatePathBootstrapUT
 }
 
 UCM_ROOT = 'D:/Repo/UCM'
 UCMA_Folder_Script_App = "/private/UI/UCMWeb/UCMWeb/Scripts/App"
+UCMA_Folder_Script_Tests = "/private/UI/UCMWeb/UCMWeb/Scripts/Tests"
 
 UCM_A_PROJECT = 0
 UCM_CORE_PROJECT = 1
@@ -148,3 +159,8 @@ UCM_CORE_RoutingMetadata = UCM_CORE_Path + "/Metadata/RoutingMetadataV2.ts"
 UCM_CORE_RoutingConstants = UCM_CORE_Path + "/Routing/RoutingConstants.ts"
 UCMA_AgentWorkspaceRouteRegistrantV2_Path = UCM_ROOT + UCMA_Folder_Script_App + "/Routing/AgentWorkspaceRouteRegistrantV2.ts"
 
+UCM_EXPOSUREKEY_SQL_PATH = UCM_ROOT + "/private/Database/UcmData/Deployment/PopulateUserPreferenceAndExposureKeysData.sql"
+
+UCM_WEBCONFIG_PATH = UCM_ROOT + "/private/UI/UCMWeb/UCMWeb/Web.config"
+
+TEST_ApplicationBootstrap_Path = UCM_ROOT + UCMA_Folder_Script_Tests + '/Common/ApplicationBootstrap-Test.ts'

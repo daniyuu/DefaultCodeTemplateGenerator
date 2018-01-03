@@ -1,0 +1,17 @@
+import CommonTestSetup = require("Mocks/Global/CommonTestSetup");
+
+suite("{2}", () => {0}
+    var commonTestSetup: CommonTestSetup;
+    var {3}: any
+ 
+    setup(() => {0}
+        commonTestSetup = new CommonTestSetup();
+        {3} = new {2}();
+        commonTestSetup.Setup();
+    {1});
+
+    teardown(() => {0}
+        commonTestSetup.Teardown();
+    {1});
+
+{1});

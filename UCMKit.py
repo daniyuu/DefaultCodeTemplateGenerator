@@ -11,6 +11,14 @@ class UCMKit:
         self.ua.createNewPage(workSpace, pageName)
         return
 
+    def createNewTab(self, featureFolderPath, featureTestsFolderPath, tabName, exposureKeyName):
+        self.ua.createNewTab(featureFolderPath, featureTestsFolderPath, tabName, exposureKeyName)
+        return
 
+
+featureFolderPath = Constants.UCM_ROOT + Constants.UCMA_Folder_Script_App + "/Pilot"
+featureTestsFolderPath = Constants.UCM_ROOT + Constants.UCMA_Folder_Script_Tests + "/Pilot"
+tabName = "AccountPilot"
+exposureKeyName = "Feature_813093_AccountPilot"
 kit = UCMKit()
-kit.createNewPage(Constants.UCM_A_PROJECT, 'FeaturePilotReadOnlyV2')
+kit.createNewTab(featureFolderPath, featureTestsFolderPath, tabName, exposureKeyName)
