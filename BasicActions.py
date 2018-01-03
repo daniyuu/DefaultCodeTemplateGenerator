@@ -25,6 +25,16 @@ class BasicActions:
         f.close()
         return
 
+    def getIndexByContent(self, filePath, content):
+        contents = self.readFile(filePath)
+        codeLine = 0
+        for index in range(len(contents)):
+            currentLine = contents[index]
+            if (content in currentLine):
+                codeLine = index + 1
+                break
+        return codeLine
+
     def insertCodeAtTail(self, filePath, value):
         contents = self.readFile(filePath)
         index = len(contents) - 1

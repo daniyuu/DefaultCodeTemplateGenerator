@@ -110,8 +110,8 @@ TEMPLATES_PATHS = {
 }
 
 TEST_TEMPLATES_PATHS = {
-TEST_TYPE_BASIC_UT_TEMPLATE: TemplatePathBasicUT,
-TEST_TYPE_BOOTSTRAP_TEMPLATE: TemplatePathBootstrapUT
+    TEST_TYPE_BASIC_UT_TEMPLATE: TemplatePathBasicUT,
+    TEST_TYPE_BOOTSTRAP_TEMPLATE: TemplatePathBootstrapUT
 }
 
 UCM_ROOT = 'D:/Repo/UCM'
@@ -164,3 +164,14 @@ UCM_EXPOSUREKEY_SQL_PATH = UCM_ROOT + "/private/Database/UcmData/Deployment/Popu
 UCM_WEBCONFIG_PATH = UCM_ROOT + "/private/UI/UCMWeb/UCMWeb/Web.config"
 
 TEST_ApplicationBootstrap_Path = UCM_ROOT + UCMA_Folder_Script_Tests + '/Common/ApplicationBootstrap-Test.ts'
+
+UCM_TabCS_PATH = UCM_ROOT + "/private/Shared/Shared.Test/UcmWeb.Performers/Enums/Tab.cs"
+
+TAB_VIEWNAMW_TopLevelTab = "TopLevelTab"
+TAB_VIEWNAMW_CustomerOneViewTab = "CustomerOneViewTab"
+TAB_VIEWNAMW_AccountOneViewTab = "AccountOneViewTab"
+TAB_VIEWNAMW_StrategyViewTab = "StrategyViewTab"
+TAB_VIEWNAMW_AgencyOneViewTab = "AgencyOneViewTab"
+TAB_VIEWNAMW_CatchAndReleaseManagerViewTab = "CatchAndReleaseManagerViewTab"
+TAB_VIEWNAMW_CatchAndReleaseAgentsViewTab = "CatchAndReleaseAgentsViewTab"
+TAB_VIEWNAMW_ExposureManagementTab = "ExposureManagementTab"

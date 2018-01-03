@@ -2,7 +2,7 @@ import CommonTestSetup = require("Mocks/Global/CommonTestSetup");
 
 suite("{2}", () => {0}
     var commonTestSetup: CommonTestSetup;
-    var {3}: any
+    var {3}: any;
  
     setup(() => {0}
         commonTestSetup = new CommonTestSetup();

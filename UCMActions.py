@@ -18,12 +18,12 @@ class UCMActions:
         return
 
     def registerTSFile(self, csprojPath, fileRegisterPath):
-        value = """\t\t<TypeScriptCompile Include="{0}" />\n""".format(fileRegisterPath.decode('string_escape'))
+        value = """\t<TypeScriptCompile Include="{0}" />\n""".format(fileRegisterPath.decode('string_escape'))
         self.ba.insertCode(csprojPath, value, "<TypeScriptCompile", "<TypeScriptCompile")
         return
 
     def registerContentFile(self, csprojPath, fileRegisterPath):
-        value = """\t\t<Content Include="{0}" />\n""".format(fileRegisterPath.decode('string_escape'))
+        value = """\t<Content Include="{0}" />\n""".format(fileRegisterPath.decode('string_escape'))
         self.ba.insertCode(csprojPath, value, "<Content", "<Content")
         return
 
@@ -332,8 +332,22 @@ class UCMActions:
         return
 
     def createNewTab(self, folderRoot, testFolderRoot, name, exposureKeyName):
-        _bootstrapFilePath, _constantsFilePath = self.createNewFeatureBase(folderRoot, testFolderRoot, name)
-        self.createExposureKey(_constantsFilePath, exposureKeyName)
+        # _bootstrapFilePath, _constantsFilePath = self.createNewFeatureBase(folderRoot, testFolderRoot, name)
+        # self.createExposureKey(_constantsFilePath, exposureKeyName)
+        _constantsFilePath = folderRoot + "/{0}Constants.ts".format(name)
+        _bootstrapFilePath = folderRoot + "/{0}BootStrap.ts".format(name)
+        # self.createGridView(name, folderRoot, _constantsFilePath, _bootstrapFilePath)
+        self.addTabEnumToView(Constants.TAB_VIEWNAMW_AccountOneViewTab, 5, "Pilot")
+        return
+
+    def addTabEnumToView(self, viewName, tabIndex, tabName):
+        index = self.ba.getIndexByContent(Constants.UCM_TabCS_PATH, viewName)
+        index += tabIndex
+        value = "\t\t{0},\n".format(tabName)
+        self.ba.insertCodeByIndex(Constants.UCM_TabCS_PATH, value, index)
+        return
+
+    def addTab(self):
         return
 
     def UT_ApplicationBootstrap(self, bootStrapName):
@@ -356,5 +370,6 @@ class UCMActions:
         filePath = testFolderRoot + "/{0}-Test.ts".format(feataureName)
         templatePath = Constants.TEST_TEMPLATES_PATHS[testType]
         self.createFileByTemplate(templatePath, filePath, feataureName)
+        self.importDependency(filePath, feataureName)
         self.registerCsproj(workSpace, Constants.FILE_TYPE_Typescript, filePath)
         return
